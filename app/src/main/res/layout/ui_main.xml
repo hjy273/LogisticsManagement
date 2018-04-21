@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.clb.logisticsmanagement.activity.MainActivity">
+
+    <include
+        android:id="@+id/titleBar"
+        layout="@layout/include_bar"/>
+
+    <!--  显示的界面 -->
+    <LinearLayout
+        android:id="@+id/showText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/titleBar"
+        android:orientation="horizontal">
+
+        <!-- 数据分类位置 -->
+        <RelativeLayout
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp">
+
+            <!-- 温度位置 -->
+            <TextView
+                android:id="@+id/firstText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="温度："
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"/>
+
+            <!-- 绝对湿度位置 -->
+            <TextView
+                android:id="@+id/secondText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/firstText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="绝对湿度："
+                android:textColor="#000"
+                android:textSize="25sp"/>
+
+            <!-- 相对湿度位置 -->
+
+            <!-- 物件状况 -->
+            <TextView
+                android:id="@+id/fourthText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/secondText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:text="物件是否完好："
+                android:textColor="#000"
+                android:textSize="25sp"/>
+
+        </RelativeLayout>
+
+        <!-- 数据值的位置 -->
+        <RelativeLayout
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp">
+
+            <!-- 温度数据位置 -->
+            <TextView
+                android:id="@+id/oneText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="8dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="30sp"/>
+
+            <!-- 绝对湿数据位置 -->
+            <TextView
+                android:id="@+id/twoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/oneText"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="12dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="30sp"/>
+
+
+            <!-- 物件状况 -->
+            <TextView
+                android:id="@+id/threeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/twoText"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="30sp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!--  发送01数据，接收数据  -->
+    <Button
+        android:id="@+id/goon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/showText"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:background="#abcdef"
+        android:padding="15dp"
+        android:text="更新数据"
+        android:textColor="#fff"/>
+
+    <!--  提交的按钮  -->
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/goon"
+        android:layout_marginTop="5dp"
+        android:layout_margin="10dp"
+        android:background="#abcdef"
+        android:padding="15dp"
+        android:text="上传"
+        android:textColor="#fff"/>
+
+</RelativeLayout>
