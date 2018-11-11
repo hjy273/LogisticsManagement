@@ -58,11 +58,14 @@ public class ScanHelper {
             if (name == null || bluetoothDevice == null || scanListener == null)
                 return;
             Log.e("debug_scan", "bleName:" + name);
+            //搜索到的设备列表
             scanListener.parserDevice(bluetoothDevice, bytes, i);
         }
     };
 
+    //
     public interface ScanListener {
+        //接口内方法亦抽象
         void parserDevice(BluetoothDevice bluetoothDevice, byte[] data, int rssi);
     }
 

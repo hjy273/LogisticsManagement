@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.clb.logisticsmanagement.R;
 import com.clb.logisticsmanagement.ble.BleHelper;
+import com.clb.logisticsmanagement.ble.Utils;
 import com.clb.logisticsmanagement.ble.conn.ConnResult;
 
 /**
@@ -82,7 +83,7 @@ public class MainActivity extends RootActivity implements View.OnClickListener, 
 			case  R.id.goon:
 				bleHelper.sendData();
 			default:
-				Toast.makeText(this, "(＾－＾)", Toast.LENGTH_SHORT).show();
+				Utils.showToast(getApplicationContext(),"上传数据");
 				break;
 		}
 	}
@@ -100,6 +101,7 @@ public class MainActivity extends RootActivity implements View.OnClickListener, 
 	}
 
 	@Override
+	//刷新，注册
 	protected void onResume() {
 		super.onResume();
 		bleHelper.resigistBleListener(this);
@@ -140,7 +142,7 @@ public class MainActivity extends RootActivity implements View.OnClickListener, 
 				if (state_num == 1){state = "完好";}
 				if(state_num != 1&&state_num != 0){state = "未知错误";}
 
-				//温度
+				//温
 				String Temperature = sb.toString().substring(5,6) + sb.toString().substring(7,8);
 
 				//绝对湿度
